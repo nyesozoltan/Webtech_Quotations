@@ -1,1 +1,46 @@
-<p>dashboard works!</p>
+<div class="container-fluid my-4">
+    <div class="row">
+        <div class="col-7">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    <div class="row">
+                        <div class="col-6 text-white">
+                            <strong>Idézet Lista</strong> 
+                        </div>  
+                        <div class="col-6 text-end">
+                            <button class="btn text-white" style="background-color:#264441;">Új hozzáadása</button>       
+                        </div>                                   
+                    </div>                       
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                       <div class="col-12">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>                                
+                                    <th>Név</th>                                
+                                    <th>E-mail</th>
+                                    <th>Osztály</th>                                
+                                    <th>Nem</th>                                
+                                    <th>Születési Dátum</th>                                                                
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let employee of employees">                                
+                                    <td>{{ employee.employeeName }}</td>
+                                    <td>{{ employee.emailId }}</td>
+                                    <td>{{ employee.department }}</td>
+                                    <td>{{ employee.gender }}</td>
+                                    <td>{{ employee.birthDate | date:'yyyy-MM-dd' }}</td>
+                                     <button class="btn btn text-white" style="background-color:#264441;">Szerkeszt</button>
+                                     <button class="btn btn text-white" style="background-color:#a51414;" >Töröl</button>
+                                  </tr>
+                            </tbody>
+                        </table>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
