@@ -1,0 +1,96 @@
+body {background: #F5F6FA; font-family: "Mali", cursive; color: #858AA6; font-size: 20px;}
+
+.mycards {border-radius: 20px;overflow: hidden; background-color: white; border: solid 10px #30323a; height: 100%}
+
+/** Full Image Card **/
+#card-fullimg img {height: 100%; min-height: 350px; width: 100%; object-fit: cover; border-radius: 0; border-right: solid; border-color: #E80088;border-width: 8px;} 
+
+/** Hover Effect **/
+#card-hovereffect{
+ width: 100%;
+ height: 100%;
+ min-height: 300px;
+ overflow: hidden;
+ position: relative;
+}
+
+.inside {
+ position: absolute;
+ width: 30%;
+ height: 100%;
+ background: #0e0a0c;
+ transition: width 0.4s;
+ overflow: hidden;
+ z-index: 2;
+  min-width: 180px;
+}
+
+.inside-text {
+ width: 80%;
+ height: 100%;
+ position: absolute; 
+ float: left;
+ left: 200px;
+ text-wrap: wrap;
+}
+
+.inside-btn {
+  background-color: transparent;
+  border: 0px solid #fff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 90%;
+  left: 45%;
+}
+
+.back-btn {
+  color: #656980;
+  background-color: transparent;
+  border: 2px solid #656980;
+  padding: 0.5rem 1.2rem;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #656980;
+  color: white;
+}
+
+
+
+.outside-text {
+ width: 60%;
+ height: 100%;
+ position: absolute;
+ top: 0;
+ right: 0;
+ z-index: 1;
+ box-sizing: border-box;
+ padding: 1rem;
+ padding-top: 0;
+}
+
+#card-hovereffect h5 {text-align: center; font-style: italic; color: #052710; padding-top: 0.5em;}
+.left-side {width: 200px; height: 100%; position: relative; float: left;}
+#card-hovereffect .left-side img {width: 100%; height: 100%; object-fit: cover; display: block;}
+.more-btn {position: absolute; bottom: 1rem; right: 1rem; font-size: 0.9em;}
+#card-hovereffect:hover .inside { width: 100%; border-radius: 0 5px 5px 0;}
+
+/** Text **/
+.card-title {color: #00e813; text-decoration: wavy; font-weight: bold; font-size: 1.5em}
+.inside-text h5, .inside-text {color: #fff!important}
+#card-fullimg li {list-style-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 292 292" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2"><path d="M145.962 50.394c33.134-47.898 66.063-54.591 92.817-44.847 8.885 3.235 17.087 8.285 24.393 14.238 29.301 23.884 40.84 64.236 11.536 112.006-20.513 35.829-78.75 44.42-128.747 109.684-57.139-71.495-86.894-62.786-117.21-93.062-43.589-43.527-31.908-104.744-2.604-128.628s85.016-38.376 119.814 30.609z" fill="rgb(232, 0, 136)"/></svg>');}
+#card-fullimg li::marker { font-size: 1.5em;}
+
+/** Media Queries **/
+@media screen and (max-width: 800px) { 
+#card-fullimg img {border-right: none; border-bottom: solid; border-color: #6d7ab4; border-width: 8px}
+}

@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "text": "Az élet nem arról szól, hogy várjuk a vihar elvonulását, hanem arról, hogy megtanuljunk táncolni az esőben.",
     "author": "Vivian Greene",
     "source": "Ismeretlen",
@@ -8,7 +8,7 @@
     "mood": "Elmélkedő"
   },
   {
-    "id": 2,
+    "id": "2",
     "text": "A tudás hatalom.",
     "author": "Francis Bacon",
     "source": "Meditationes Sacrae",
@@ -16,7 +16,7 @@
     "mood": "Nyugodt"
   },
   {
-    "id": 3,
+    "id": "3",
     "text": "Az egyetlen módja annak, hogy nagyszerű munkát végezz, ha szereted, amit csinálsz.",
     "author": "Steve Jobs",
     "source": "Stanford beszéd, 2005",
@@ -24,7 +24,7 @@
     "mood": "Motiváció"
   },
   {
-    "id": 4,
+    "id": "4",
     "text": "A nevetés a lélek napfénye.",
     "author": "Thomas Mann",
     "source": "Doktor Faustus",
@@ -32,7 +32,7 @@
     "mood": "Vidám"
   },
   {
-    "id": 5,
+    "id": "5",
     "text": "A szeretet nem csupán érzés, hanem döntés is.",
     "author": "Erich Fromm",
     "source": "A szeretet művészete",
@@ -40,7 +40,7 @@
     "mood": "Elmélkedő"
   },
   {
-    "id": 6,
+    "id": "6",
     "text": "A barátság az egyetlen cement, ami valaha is összetartja a világot.",
     "author": "Woodrow Wilson",
     "source": "Beszéd, 1913",
@@ -48,7 +48,7 @@
     "mood": "Nyugodt"
   },
   {
-    "id": 7,
+    "id": "7",
     "text": "A siker nem végleges, a kudarc nem végzetes: a bátorság számít, hogy folytassuk.",
     "author": "Winston Churchill",
     "source": "Beszédei",
@@ -56,7 +56,7 @@
     "mood": "Elmélkedő"
   },
   {
-    "id": 8,
+    "id": "8",
     "text": "A legnagyobb dicsőség nem az, hogy soha nem bukunk el, hanem hogy minden bukás után felállunk.",
     "author": "Confucius",
     "source": "Ismeretlen",
@@ -64,7 +64,7 @@
     "mood": "Elmélkedő"
   },
   {
-    "id": 9,
+    "id": "9",
     "text": "Az ember csak akkor boldog, ha másokat is boldoggá tesz.",
     "author": "Jean-Jacques Rousseau",
     "source": "Emil vagy a nevelésről",
@@ -72,7 +72,7 @@
     "mood": "Vidám"
   },
   {
-    "id": 10,
+    "id": "10",
     "text": "Semmit sem tanít jobban a kudarc, mint a siker.",
     "author": "Bill Gates",
     "source": "Interjúk",
@@ -80,7 +80,7 @@
     "mood": "Közömbös"
   },
   {
-    "id": 11,
+    "id": "11",
     "text": "Ne az időt számold, hanem tedd az időt számossá.",
     "author": "Muhammad Ali",
     "source": "Beszédei",
@@ -88,7 +88,7 @@
     "mood": "Motiváció"
   },
   {
-    "id": 12,
+    "id": "12",
     "text": "A boldogság nem valami kész dolog. A cselekedeteidből ered.",
     "author": "Dalai Láma",
     "source": "Beszédek",
@@ -96,7 +96,7 @@
     "mood": "Nyugodt"
   },
   {
-    "id": 13,
+    "id": "13",
     "text": "Nem az számít, hogy mennyi idő van az életedben, hanem mennyi élet van az idődben.",
     "author": "Abraham Lincoln",
     "source": "Beszédek",
@@ -104,7 +104,7 @@
     "mood": "Elmélkedő"
   },
   {
-    "id": 14,
+    "id": "14",
     "text": "Szeretni és szeretve lenni a legnagyobb boldogság a világon.",
     "author": "George Sand",
     "source": "Levelek",
@@ -112,7 +112,7 @@
     "mood": "Vidám"
   },
   {
-    "id": 15,
+    "id": "15",
     "text": "A humor az, ami megakadályozza, hogy megőrüljünk.",
     "author": "Charlie Chaplin",
     "source": "Filmek",

@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   imports: [CommonModule, FormsModule],
+  
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
@@ -22,5 +23,20 @@ export class DashboardComponent {
 
   ngOnInit(): void {
     this.quotes = this.quoteService.loadQuotes();
+  }
+
+  onEdit(id: string) {
+    this.router.navigate(['/edit-quote', id]);
+  }
+
+  onView(id: string) {
+    this.router.navigate(['/quote', id]);
+  }
+
+  onDelete(id: string) {
+    if (confirm('Biztosan törlöd ezt az idézetet?')) {
+      this.quoteService.deleteQuote(id);
+      this.quotes = this.quoteService.getAllQuotes();
+    }
   }
 }

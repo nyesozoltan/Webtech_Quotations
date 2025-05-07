@@ -1,7 +1,7 @@
 import { inject, Injectable } from "@angular/core";
 import { Quote } from "../_model/quote";
 import { HttpClient } from "@angular/common/http";
-import { Observable, tap } from "rxjs";
+import { BehaviorSubject, Observable, tap } from "rxjs";
 
 const STORAGE_KEY = 'my-quotes';
 
@@ -24,7 +24,7 @@ export class QuoteService {
     
     if (storedQuotes) {      
       this.quotes = JSON.parse(storedQuotes);
-      console.log('Könyvek betöltve localStorage-ból:', this.quotes);
+      console.log('Idézetek betöltve localStorage-ból:', this.quotes);
     } if(this.quotes.length === 0) { 
         this.loadInitialQuotes().subscribe((quotes) => {
         this.quotes = quotes;

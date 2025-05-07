@@ -65,20 +65,25 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>                                
-                                    <th>Idézet</th>                                
-                                    <th>Szerző</th>
-                                    <th>Kategória</th>                                                                                    
+                                    <th class="text-center" style="width: 200px;">Idézet</th>                                
+                                    <th class="text-center" style="width: 200px;">Szerző</th>
+                                    <th class="text-center" style="width: 200px;">Kategória</th>
+                                    <th class="text-center" style="width: 100px;">Műveletek</th>                                                                                    
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let quote of quotes">                                
-                                    <td>{{ quote.text }}</td>
-                                    <td>{{ quote.author }}</td>
-                                    <td>{{ quote.categories }}</td>
-                                    <button class="btn btn text-white" style="background-color:#1458a5;" >Részletek</button>                                   
-                                     <button class="btn btn text-white" style="background-color:#264441;">Szerkeszt</button>
-                                     <button class="btn btn text-white" style="background-color:#a51414;" >Töröl</button>
-                                  </tr>
+                                <tr *ngFor="let quote of quotes"> 
+                                    <td><i>"{{ quote.text.length > 30 ? (quote.text | slice:0:30) + '...' : quote.text }}"</i></td>
+                                    <td class="text-center">{{ quote.author }}</td>
+                                    <td class="text-center">{{ quote.categories }}</td>
+                                    <td>
+                                        <div class="d-flex justify-content-center gap-2">
+                                          <button class="btn btn text-white" style="background-color:#1458a5;" (click)="onView(quote.id)" >Részletek</button>                                   
+                                          <button class="btn btn text-white" (click)="onEdit(quote.id)" style="background-color:#264441;">Szerkeszt</button>
+                                          <button class="btn btn text-white" style="background-color:#a51414;" (click)="onDelete(quote.id)">Töröl</button>
+                                        </div>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                        </div>

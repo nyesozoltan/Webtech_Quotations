@@ -1,1 +1,37 @@
-<p>quotation-details works!</p>
+@if(quote){
+    <div class="container my-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-7">          
+          <div id="card-hovereffect" class="mycards position-relative">
+            <div class="inside">
+              <div class="left-side">
+                
+                <img src ="https://images.pexels.com/photos/7568673/pexels-photo-7568673.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"/>
+              </div>
+  
+              <div class="inside-text p-3">
+                <h5 class="card-title mb-5">Idézet Részletei:</h5>
+                <ul>
+                  <li class="mb-3"><strong>Szerző: </strong> {{ quote.author }}</li>
+                  <li class="mb-3"><strong>Kategória: </strong> {{ quote.categories }}</li>
+                  <li class="mb-3"><strong>Forrás: </strong> {{ quote.source }}</li>
+                  <li class="mb-3"><strong>Hangulat: </strong> {{ quote.mood }}</li>
+                </ul>
+              </div>
+            </div>  
+            <div class="outside-text p-4">
+              <h5 class="card-title text-center">"{{ quote.text }}"</h5>
+              <span class="more-btn">Húzd fölé az egeret a részletekért</span>
+            </div>
+          </div>
+          <div class="mt-4">
+            <button 
+              class="btn back-btn"
+              (click)="router.navigate(['/dashboard'])">
+              ← Vissza a listához
+            </button>
+          </div>
+        </div>        
+      </div>      
+    </div>
+  }
