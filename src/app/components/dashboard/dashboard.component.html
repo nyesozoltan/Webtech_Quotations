@@ -1,86 +1,83 @@
 <div class="row">
-    <div class="col-2">
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color:  #264441;">
-            <div class="container-fluid">
-              <a class="navbar-brand fw-bold">Menü</a>              
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" [routerLink]="['/add-quote']">Új hozzáadása</a>
-                  </li>                 
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li>
-                        <hr class="dropdown-divider">
-                      </li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link ">Link</a>
-                  </li>
-                </ul>
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-light" type="submit">Search</button>
-                </form>
-              </div>
-            </div>
-          </nav>
-    </div>
-    <div class="col-10">
-        <div class="container-fluid mt-1">           
-        </div>    
-    </div>
-</div>
+  <!-- Bal oldali menü -->
+  <div class="col-2">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #264441;">
+      <div class="container-fluid d-flex flex-column align-items-start">
+        <a class="navbar-brand fw-bold">Menü</a>
+        <ul class="navbar-nav w-100">
+          <!-- Új hozzáadása -->
+          <li class="nav-item">
+            <a class="nav-link active" [routerLink]="['/quote-form']">➕ Új hozzáadása</a>
+          </li>
 
-<div class="container-fluid my-4 main-content">
-    <div class="row">
-        <div class="col-7">
-            <div class="card">
-                <div class="card-header bg-secondary">
-                    <div class="row">
-                        <div class="col-6 text-white">
-                            <strong>Idézet Lista</strong> 
-                        </div>                                                          
-                    </div>                       
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                       <div class="col-12">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>                                
-                                    <th class="text-center" style="width: 200px;">Idézet</th>                                
-                                    <th class="text-center" style="width: 200px;">Szerző</th>
-                                    <th class="text-center" style="width: 200px;">Kategória</th>
-                                    <th class="text-center" style="width: 100px;">Műveletek</th>                                                                                    
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let quote of quotes"> 
-                                    <td><i>"{{ quote.text.length > 30 ? (quote.text | slice:0:30) + '...' : quote.text }}"</i></td>
-                                    <td class="text-center">{{ quote.author }}</td>
-                                    <td class="text-center">{{ quote.categories }}</td>
-                                    <td>
-                                        <div class="d-flex justify-content-center gap-2">
-                                          <button class="btn btn text-white" style="background-color:#1458a5;" (click)="onView(quote.id)" >Részletek</button>                                   
-                                          <button class="btn btn text-white" (click)="onEdit(quote.id)" style="background-color:#264441;">Szerkeszt</button>
-                                          <button class="btn btn text-white" style="background-color:#a51414;" (click)="onDelete(quote.id)">Töröl</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                       </div>
-                    </div>
-                </div>
+          <!-- Szűrők -->
+          <li class="nav-item mt-4">
+            <span class="nav-link text-white fw-bold">Szűrők</span>
+          </li>
+
+          <!-- Kategória szűrő -->
+          <li class="nav-item mt-2">
+            <span class="text-white mx-2 fw-light small">Kategória</span>
+            <select class="form-select form-select-sm mx-2" [(ngModel)]="selectedCategory">
+              <option value="">Minden kategória</option>
+              <option *ngFor="let cat of categoryOptions" [value]="cat">{{ cat }}</option>
+            </select>
+          </li>
+
+          <!-- Hangulat szűrő -->
+          <li class="nav-item mt-3">
+            <span class="text-white mx-2 fw-light small">Hangulat</span>
+            <select class="form-select form-select-sm mx-2" [(ngModel)]="selectedMood">
+              <option value="">Minden hangulat</option>
+              <option *ngFor="let mood of moodOptions" [value]="mood">{{ mood }}</option>
+            </select>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Jobb oldali tartalom -->
+  <div class="col-10">
+    <div class="container-fluid mt-1">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header bg-secondary text-white">
+              <strong>Idézet Lista</strong>
             </div>
+            <div class="card-body">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th class="text-center" style="width: 200px;">Idézet</th>
+                    <th class="text-center" style="width: 200px;">Szerző</th>
+                    <th class="text-center" style="width: 200px;">Kategória</th>
+                    <th class="text-center" style="width: 100px;">Műveletek</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let quote of filteredQuotes">
+                    <td><i>"{{ quote.text.length > 30 ? (quote.text | slice: 0:30) + '...' : quote.text }}"</i></td>
+                    <td class="text-center">{{ quote.author }}</td>
+                    <td class="text-center">{{ quote.categories }}</td>
+                    <td>
+                      <div class="d-flex justify-content-center gap-2">
+                        <button class="btn btn text-white" style="background-color:#1458a5;" (click)="onView(quote.id)">Részletek</button>
+                        <button class="btn btn text-white" style="background-color:#264441;" (click)="onEdit(quote.id)">Szerkeszt</button>
+                        <button class="btn btn text-white" style="background-color:#a51414;" (click)="onDelete(quote.id)">Töröl</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr *ngIf="filteredQuotes.length === 0">
+                    <td colspan="4" class="text-center text-muted">Nincs találat a megadott szűrési feltételekre.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
