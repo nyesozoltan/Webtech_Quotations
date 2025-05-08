@@ -3,11 +3,11 @@ import { Component, inject } from '@angular/core';
 import { Quote } from '../../_model/quote';
 import { FormsModule } from '@angular/forms';
 import { QuoteService } from '../../_services/quote.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterModule],
   
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
