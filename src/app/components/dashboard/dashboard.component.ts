@@ -31,11 +31,15 @@ export class DashboardComponent {
 
   get filteredQuotes(): Quote[] {
     return this.quotes.filter(quote =>
-      (quote.text.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-       quote.author.toLowerCase().includes(this.searchTerm.toLowerCase())) &&
+      quote.text.toLowerCase().includes(this.searchTerm.toLowerCase()) &&
       (this.selectedCategory ? quote.categories === this.selectedCategory : true) &&
       (this.selectedMood ? quote.mood === this.selectedMood : true)
     );
+  }
+  
+  clearFilters(): void {
+    this.selectedCategory = '';
+    this.selectedMood = '';
   }
 
   onEdit(id: string): void {

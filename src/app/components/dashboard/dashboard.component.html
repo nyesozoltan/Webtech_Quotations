@@ -1,43 +1,46 @@
 <div class="row">
-  <!-- Bal oldali menü -->
   <div class="col-2">
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #264441;">
       <div class="container-fluid d-flex flex-column align-items-start">
         <a class="navbar-brand fw-bold">Menü</a>
         <ul class="navbar-nav w-100">
-          <!-- Új hozzáadása -->
           <li class="nav-item">
-            <a class="nav-link active" [routerLink]="['/quote-form']">➕ Új hozzáadása</a>
+            <a class="nav-link active" [routerLink]="['/quote-form']"> + Új hozzáadása</a>
           </li>
-
-          <!-- Szűrők -->
-          <li class="nav-item mt-4">
+          <li class="nav-item mt-3">
             <span class="nav-link text-white fw-bold">Szűrők</span>
           </li>
-
-          <!-- Kategória szűrő -->
-          <li class="nav-item mt-2">
-            <span class="text-white mx-2 fw-light small">Kategória</span>
-            <select class="form-select form-select-sm mx-2" [(ngModel)]="selectedCategory">
+          <li class="nav-item mt-0">
+            <span class="text-white mx-1 fw-light small">Kategória</span>
+            <select class="form-select form-select-sm mx-1" [(ngModel)]="selectedCategory">
               <option value="">Minden kategória</option>
               <option *ngFor="let cat of categoryOptions" [value]="cat">{{ cat }}</option>
             </select>
           </li>
-
-          <!-- Hangulat szűrő -->
-          <li class="nav-item mt-3">
-            <span class="text-white mx-2 fw-light small">Hangulat</span>
-            <select class="form-select form-select-sm mx-2" [(ngModel)]="selectedMood">
+          <li class="nav-item mt-1">
+            <span class="text-white mx-1 fw-light small">Hangulat</span>
+            <select class="form-select form-select-sm mx-1" [(ngModel)]="selectedMood">
               <option value="">Minden hangulat</option>
               <option *ngFor="let mood of moodOptions" [value]="mood">{{ mood }}</option>
             </select>
+          </li>
+          <li class="nav-item mt-3">
+            <button class="btn btn-sm btn-outline-light mx-1" (click)="clearFilters()">Szűrés törlése</button>
+          </li>
+          <li class="nav-item mt-3">
+            <span class="nav-link text-white fw-bold">Keresés</span>
+            <input
+              type="text"
+              class="form-control form-control-sm mx-1"
+              placeholder="Idézet keresése"
+              [(ngModel)]="searchTerm"
+            />
           </li>
         </ul>
       </div>
     </nav>
   </div>
 
-  <!-- Jobb oldali tartalom -->
   <div class="col-10">
     <div class="container-fluid mt-1">
       <div class="row">
@@ -70,7 +73,7 @@
                     </td>
                   </tr>
                   <tr *ngIf="filteredQuotes.length === 0">
-                    <td colspan="4" class="text-center text-muted">Nincs találat a megadott szűrési feltételekre.</td>
+                    <td colspan="4" class="text-center text-muted">Nincs találat a megadott feltételekre.</td>
                   </tr>
                 </tbody>
               </table>
