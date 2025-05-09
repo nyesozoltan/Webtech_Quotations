@@ -1,46 +1,54 @@
 <div class="row">
-  <div class="col-2">
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #264441;">
-      <div class="container-fluid d-flex flex-column align-items-start">
-        <a class="navbar-brand fw-bold">Menü</a>
-        <ul class="navbar-nav w-100">
-          <li class="nav-item">
-            <a class="nav-link active" [routerLink]="['/quote-form']"> + Új hozzáadása</a>
-          </li>
-          <li class="nav-item mt-3">
-            <span class="nav-link text-white fw-bold">Szűrők</span>
-          </li>
-          <li class="nav-item mt-0">
-            <span class="text-white mx-1 fw-light small">Kategória</span>
-            <select class="form-select form-select-sm mx-1" [(ngModel)]="selectedCategory">
-              <option value="">Minden kategória</option>
-              <option *ngFor="let cat of categoryOptions" [value]="cat">{{ cat }}</option>
-            </select>
-          </li>
-          <li class="nav-item mt-1">
-            <span class="text-white mx-1 fw-light small">Hangulat</span>
-            <select class="form-select form-select-sm mx-1" [(ngModel)]="selectedMood">
-              <option value="">Minden hangulat</option>
-              <option *ngFor="let mood of moodOptions" [value]="mood">{{ mood }}</option>
-            </select>
-          </li>
-          <li class="nav-item mt-3">
-            <button class="btn btn-sm btn-outline-light mx-1" (click)="clearFilters()">Szűrés törlése</button>
-          </li>
-          <li class="nav-item mt-3">
-            <span class="nav-link text-white fw-bold">Keresés</span>
-            <input
-              type="text"
-              class="form-control form-control-sm mx-1"
-              placeholder="Idézet keresése"
-              [(ngModel)]="searchTerm"
-            />
-          </li>
-        </ul>
+  <!-- BAL OLDALI SÁV -->
+  <div class="col-2 d-flex flex-column" style="background-color: #264441; min-height: 100vh; padding: 0;">
+    <nav class="navbar navbar-dark px-3 py-4 flex-column align-items-start flex-grow-1 w-100">
+      <a class="navbar-brand fw-bold text-white mb-4">Menü</a>
+
+      <ul class="navbar-nav w-100 flex-grow-1">
+        <li class="nav-item">
+          <a class="nav-link active text-white" [routerLink]="['/quote-form']"> + Új hozzáadása</a>
+        </li>
+        <li class="nav-item mt-3">
+          <span class="nav-link text-white fw-bold">Szűrők</span>
+        </li>
+        <li class="nav-item">
+          <span class="text-white mx-1 fw-light small">Kategória</span>
+          <select class="form-select form-select-sm mx-1" [(ngModel)]="selectedCategory">
+            <option value="">Minden kategória</option>
+            <option *ngFor="let cat of categoryOptions" [value]="cat">{{ cat }}</option>
+          </select>
+        </li>
+        <li class="nav-item mt-1">
+          <span class="text-white mx-1 fw-light small">Hangulat</span>
+          <select class="form-select form-select-sm mx-1" [(ngModel)]="selectedMood">
+            <option value="">Minden hangulat</option>
+            <option *ngFor="let mood of moodOptions" [value]="mood">{{ mood }}</option>
+          </select>
+        </li>
+        <li class="nav-item mt-3">
+          <button class="btn btn-sm btn-outline-light mx-1" (click)="clearFilters()">Szűrés törlése</button>
+        </li>
+        <li class="nav-item mt-3">
+          <span class="nav-link text-white fw-bold">Keresés</span>
+          <input
+            type="text"
+            class="form-control form-control-sm mx-1"
+            placeholder="Idézet keresése"
+            [(ngModel)]="searchTerm"
+          />
+        </li>
+      </ul>
+
+      <!-- Kijelentkezés szakasz legalul -->
+      <div class="w-100 p-3 border-top border-secondary text-white small">
+        <p class="mb-1">Bejelentkezve:</p>
+        <strong class="d-block mb-2">{{ loggedInUser }}</strong>
+        <button class="btn btn-sm btn-outline-light" (click)="logout()">Kijelentkezés</button>
       </div>
     </nav>
   </div>
 
+  <!-- JOBB OLDALI TARTALOM -->
   <div class="col-10">
     <div class="container-fluid mt-1">
       <div class="row">

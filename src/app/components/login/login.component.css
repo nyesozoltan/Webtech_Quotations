@@ -10,7 +10,7 @@ body {
     overflow: hidden;
     position: relative;
   }
-  
+
   .bokeh-background {
     position: absolute;
     width: 100%;
@@ -111,8 +111,7 @@ body {
     width: 100%;
     padding: 10px;
     margin-top: 40px;
-    background: rgba(25, 12, 212, 0.3);
-    border: orchide 20px thick;
+    background: rgba(25, 12, 212, 0.3);    
     border-radius: 20px;
     color: white;
     font-size: 20px;
@@ -122,6 +121,26 @@ body {
   .login-card button:hover {
     background: rgba(255, 255, 255, 0.5);
   }
+
+  .login-card button:disabled {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.login-card button:disabled:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+  
+.login-card .error-message {
+  color: #ff6b6b;
+  font-size: 14px;
+  margin-top: 15px;
+}
+  
+
+
 
   
   

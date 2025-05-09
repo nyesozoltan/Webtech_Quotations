@@ -14,6 +14,7 @@ import { QuoteService } from '../../_services/quote.service';
 })
 export class DashboardComponent {
   quotes: Quote[] = [];
+  loggedInUser = localStorage.getItem('role') ?? 'ismeretlen';
 
   searchTerm: string = '';
   selectedCategory: Category | '' = '';
@@ -40,6 +41,11 @@ export class DashboardComponent {
   clearFilters(): void {
     this.selectedCategory = '';
     this.selectedMood = '';
+  }
+
+  logout() {
+  localStorage.removeItem('role');
+  this.router.navigate(['/login']);
   }
 
   onEdit(id: string): void {

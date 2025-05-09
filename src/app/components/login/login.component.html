@@ -11,14 +11,21 @@
     <div class="bokeh"></div>
     <div class="bokeh"></div>
     <div class="bokeh"></div>
-  </div>
+  </div>  
 
   <div class="login-card">
     <h2>Bejelentkezés</h2>
     <form>
       <input type="text" [(ngModel)]="loginObj.userName" name="user" placeholder="Felhasználónév" required>
-      <input type="password" [(ngModel)]="loginObj.password" name="password" placeholder="Jelszó" required>
-      <button type="button" (click)="onLogin()">Belépés</button>
+      <input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="loginObj.password" name="password" placeholder="Jelszó" required/>
+      <div style="display: flex; justify-content: center; margin-top: 10px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <input type="checkbox" id="showPass" [(ngModel)]="showPassword" name="showPass" style="width: 16px; height: 16px;" />
+          <label for="showPass" style="color: white; font-size: 14px; cursor: pointer;">Jelszó megjelenítése</label>
+        </div>
+      </div>      
+      <p *ngIf="errorMessage" class="text-danger mt-2">{{ errorMessage }}</p>
+      <button type="button" (click)="onLogin()" [disabled]="!loginObj.userName || !loginObj.password">Belépés</button>     
     </form>
   </div>
 </body>

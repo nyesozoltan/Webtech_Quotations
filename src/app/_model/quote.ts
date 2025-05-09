@@ -1,14 +1,25 @@
 export type Mood = 'Vidám' | 'Szomorú' | 'Közömbös' | 'Nyugodt' | 'Elmélkedő';
-export type Category = 'Inspiráció' | 'Élet' | 'Humor' | 'Motiváció' | 'Szerelem' | 'Elmélkedés';
+export type Category = 'Inspiráció' | 'Munka' | 'Siker' | 'Kudarc' | 'Élet' | 'Idő' | 'Tudás' | 'Humor' | 'Motiváció' | 'Szerelem' |'Barátság' | 'Elmélkedés';
 
-export const MOOD_OPTIONS: Mood[] = ['Vidám', 'Szomorú', 'Közömbös', 'Nyugodt', 'Elmélkedő'];
+export const MOOD_OPTIONS: Mood[] = [
+   'Vidám',
+   'Szomorú',
+   'Közömbös',
+   'Nyugodt',
+   'Elmélkedő'];
 
 export const CATEGORY_OPTIONS: Category[] = [
   'Inspiráció',
+  'Munka',
+  'Siker',
+  'Kudarc',
   'Élet',
+  'Idő',
+  'Tudás',
   'Humor',
   'Motiváció',
   'Szerelem',
+  'Barátság',
   'Elmélkedés'
 ];
 export interface Quote {
