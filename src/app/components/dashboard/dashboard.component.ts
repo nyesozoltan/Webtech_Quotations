@@ -15,8 +15,8 @@ import { QuoteService } from '../../_services/quote.service';
 export class DashboardComponent {
   quotes: Quote[] = [];
   loggedInUser = localStorage.getItem('role') ?? 'ismeretlen';
-
   searchTerm: string = '';
+  deleteMessage: string = '';
   selectedCategory: Category | '' = '';
   selectedMood: Mood | '' = '';
 
@@ -62,4 +62,17 @@ export class DashboardComponent {
       this.quotes = this.quoteService.getAllQuotes();
     }
   }
+
+  deleteAllQuotes(): void {
+    if (confirm('Biztosan törölni szeretnéd az összes idézetet? Ez nem visszavonható.')) {
+      localStorage.removeItem('quotes');
+      this.quotes = [];
+      this.deleteMessage = 'Az összes idézet sikeresen törölve lett.';
+
+    // üzenet eltüntetése 3 másodperc után
+    setTimeout(() => {
+      this.deleteMessage = '';
+    }, 3000);
+  }
+}
 }

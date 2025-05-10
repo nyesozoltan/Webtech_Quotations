@@ -6,7 +6,7 @@
 
       <ul class="navbar-nav w-100 flex-grow-1">
         <li class="nav-item">
-          <a class="nav-link active text-white" [routerLink]="['/quote-form']"> + Új hozzáadása</a>
+          <a class="nav-link active text-white" [routerLink]="['/add-quote']"> + Új hozzáadása</a>
         </li>
         <li class="nav-item mt-3">
           <span class="nav-link text-white fw-bold">Szűrők</span>
@@ -37,8 +37,12 @@
             [(ngModel)]="searchTerm"
           />
         </li>
+        <!-- Csak adminnak látszik -->
+        <div *ngIf="loggedInUser === 'admin'" class="mt-5 px-1">
+          <span class="text-white fw-bold" style="font-size: 20px;">Admin menü:</span>
+          <a class="nav-link text-white" style="cursor: pointer; font-size: 15px;" (click)="deleteAllQuotes()">🗑 Minden adat törlése</a>
+        </div>
       </ul>
-
       <!-- Kijelentkezés szakasz legalul -->
       <div class="w-100 p-3 border-top border-secondary text-white small">
         <p class="mb-1">Bejelentkezve:</p>
@@ -51,6 +55,7 @@
   <!-- JOBB OLDALI TARTALOM -->
   <div class="col-10">
     <div class="container-fluid mt-1">
+      <div *ngIf="deleteMessage" class="alert alert-success mt-3" role="alert">{{ deleteMessage }}</div>
       <div class="row">
         <div class="col-12">
           <div class="card">
