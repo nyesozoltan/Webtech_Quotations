@@ -6,7 +6,7 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-admin-statistics',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule],
   templateUrl: './admin-statistics.component.html',
   styleUrls: ['./admin-statistics.component.css']
 })
