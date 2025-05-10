@@ -1,0 +1,48 @@
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <div class="mycards p-4 shadow-sm">
+        <h3 class="text-center mb-4" style="color: #052710; font-style: italic; text-decoration: underline;">
+          Statisztika
+        </h3>
+
+        <div class="row">
+          <!-- Kategóriák -->
+          <div class="col-md-4 mb-4">
+            <h5 class="text-success">Kategóriák</h5>
+            <ul class="list-group">
+              <li *ngFor="let cat of categoryStats" class="list-group-item">
+                {{ cat.key }} – {{ cat.count }} db
+              </li>
+            </ul>
+          </div>
+
+          <!-- Szerzők -->
+          <div class="col-md-4 mb-4">
+            <h5 class="text-success">Szerzők</h5>
+            <ul class="list-group">
+              <li *ngFor="let auth of authorStats" class="list-group-item">
+                {{ auth.key }} – {{ auth.count }} db
+              </li>
+            </ul>
+          </div>
+
+          <!-- Hangulatok -->
+          <div class="col-md-4 mb-4">
+            <h5 class="text-success">Hangulatok</h5>
+            <ul class="list-group">
+              <li *ngFor="let mood of moodStats" class="list-group-item">
+                {{ mood.key }} – {{ mood.count }} db
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Vissza gomb -->
+        <div class="mt-4">
+         <button class="btn back-btn" (click)="router.navigate(['/dashboard'])">← Vissza a listához</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

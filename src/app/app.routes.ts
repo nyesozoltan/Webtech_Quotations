@@ -3,6 +3,7 @@ import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { QuotationDetailsComponent } from './components/quotation-details/quotation-details.component';
 import { QuotationFormComponent } from './components/quotation-form/quotation-form.component';
+import { AdminStatisticsComponent } from './components/admin-statistics/admin-statistics.component';
 
 export const routes: Routes = [
     {
@@ -30,6 +31,10 @@ export const routes: Routes = [
         path: 'edit-quote/:id',
         component: QuotationFormComponent
     },
+    {
+        path: 'admin/statistics',
+        component: AdminStatisticsComponent
+    },    
     {
         path: '**',
         redirectTo: '',        

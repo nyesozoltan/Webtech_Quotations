@@ -1,0 +1,22 @@
+.mycards {
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: white;
+  border: solid 10px #30323a;
+}
+
+.back-btn {
+  color: #656980;
+  background-color: transparent;
+  border: 2px solid #656980;
+  padding: 0.5rem 1.2rem;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #656980;
+  color: white;
+}

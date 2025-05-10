@@ -41,6 +41,7 @@
         <div *ngIf="loggedInUser === 'admin'" class="mt-5 px-1">
           <span class="text-white fw-bold" style="font-size: 20px;">Admin menü:</span>
           <a class="nav-link text-white" style="cursor: pointer; font-size: 15px;" (click)="deleteAllQuotes()">🗑 Minden adat törlése</a>
+          <a class="nav-link text-white" style="cursor: pointer; font-size: 15px;" [routerLink]="['/admin/statistics']">📊 Statisztika</a>
         </div>
       </ul>
       <!-- Kijelentkezés szakasz legalul -->
